@@ -144,7 +144,7 @@ namespace WaferandChipProcessing
 				var thresvalue = (int)nudThresh.Value;
 				Core.APBoxTolerance = nudTol.Value == null ? 1 : ( int )nudTol.Value;
 
-				var gridstyle = (bool)chbGridStyle.IsChecked;
+				var gridstyle = (bool)ckbGridStyle.IsChecked;
 				var needdebug = (bool)chbDebugImg.IsChecked;
 				Core.SelectedSample = Core.SampleTypeList [ cbSampleMethod.SelectedItem as string ];
 

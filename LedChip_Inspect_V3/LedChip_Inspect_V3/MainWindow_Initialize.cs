@@ -38,25 +38,27 @@ namespace WaferandChipProcessing
     {
         void InitDisplay(MainCore core)
         {
-            nudCWNum.Value = 787;
-            nudCHNum.Value = 700;
-            nudThresh.Value = 40;
-            nudAreaUpLimit.Value = 210;
-            nudAreaDWLimit.Value = 1;
-            nudIntenSumUPLimit.Value = 15000;
-            nudIntenSumDWLimit.Value = 2000;
+            nudCWNum.Value = 120;
+            nudCHNum.Value = 120;
+            nudThresh.Value = 91;
+            nudAreaUpLimit.Value = 250;
+            nudAreaDWLimit.Value = 5;
+            nudIntenSumUPLimit.Value = 20000;
+            nudIntenSumDWLimit.Value = 5000;
             nudboxSizeH.Value = 100;
             nudboxSizeW.Value = 100;
             nudThickness.Value = 1;
 
-            nudCropRatio.Value = 280;
+            nudCropRatio.Value = 100;
             nudCropRatioAdv.Value = 5;
 
 			nudTol.Value = 3;
 
 			ckbEst4Pos_Rumbus.IsChecked = true;
+			ckbUseEl.IsChecked = true;
+			ckbGridStyle.IsChecked = true;
 
-            var sampleType2Idx = new Dictionary<string, SampleType>();
+			var sampleType2Idx = new Dictionary<string, SampleType>();
             sampleType2Idx.Add("0. Simple", SampleType.None);
             sampleType2Idx.Add("1. 1B6RB", SampleType._1B6R);
             sampleType2Idx.Add("2. A (not suppported)", SampleType._A);
@@ -86,7 +88,7 @@ namespace WaferandChipProcessing
 
             core.SampleTypeList = sampleType2Idx;
             cbSampleMethod.ItemsSource = sampleType2Idx.Select((v) => v.Key).ToList();
-			cbSampleMethod.SelectedIndex = 22;
+			cbSampleMethod.SelectedIndex = 0;
 
 			//nudEpiYoffset.Value  = 25000;
             //nudEpiX1Offset.Value = 16666;

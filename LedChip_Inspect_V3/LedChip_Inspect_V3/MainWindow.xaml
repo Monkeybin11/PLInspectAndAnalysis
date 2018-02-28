@@ -90,7 +90,7 @@
                                 <mahapp:NumericUpDown x:Name="nudIntenSumDWLimit" Grid.Row="8" Grid.Column="1"  Height="20" Width="110" VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="20,10,10,10" StringFormat="0" Minimum="1"/>
                                 <mahapp:NumericUpDown x:Name="nudTol"             Grid.Row="9"  Grid.Column="1"   Height="20" Width="110" VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="20,10,10,10" StringFormat="0" Minimum="1"/>
 
-                                <CheckBox x:Name="chbGridStyle" Content="WhiteGrid" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <CheckBox x:Name="ckbGridStyle" Content="WhiteGrid" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 <CheckBox x:Name="chbDebugImg" Content="DebugImg" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 <CheckBox x:Name="ckbSetHistRange"      Grid.Row="11" Grid.ColumnSpan="2" Content="Histogram Range"  HorizontalAlignment="Left" VerticalAlignment="Center"     Margin="20,0,0,0" FontSize="12" Checked="ckbSetHistRange_Checked" Unchecked="ckbSetHistRange_Unchecked" />
                                 <TextBox x:Name="nudHistDW" Text="0"    Grid.Row="12" Grid.Column="0"  Height="20" Width="70" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="10,10,10,10" />
