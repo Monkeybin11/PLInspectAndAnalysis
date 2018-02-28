@@ -28,8 +28,8 @@ namespace WaferandChipProcessing
         void Register_ProcMethod()
         {
             Proc_Method_List = new Dictionary<SampleType , Func<Image<Gray , byte> , Image<Gray , byte>>>();
-            Proc_Method_List.Add( SampleType.None , CreateMethod_None() );
-            Proc_Method_List.Add( SampleType._1B6R , CreateMethod_1B6R() );
+            Proc_Method_List.Add( SampleType.Thres , CreateMethod_Thres() );
+            Proc_Method_List.Add( SampleType.AdpThres , CreateMethod_AdpThres() );
             Proc_Method_List.Add( SampleType._A , CreateMethod_A() );
             Proc_Method_List.Add( SampleType._B , CreateMethod_BC() );
             Proc_Method_List.Add( SampleType._C , CreateMethod_BC() );
@@ -55,27 +55,28 @@ namespace WaferandChipProcessing
 			Proc_Method_List.Add( SampleType.PlaynittideG1 , CreateMethod_PlaynittideG1 );
 		}
 
-        Func<Image<Gray , byte> , Image<Gray , byte>> CreateMethod_None()
+        Func<Image<Gray, byte>, Image<Gray, byte>> CreateMethod_Thres()
+        {
+            var method = new Func<Image<Gray, byte>, Image<Gray, byte>>((img) =>
+            {
+                var thresImg      = DoThreshold(img , PData.ThresholdV );
+                return thresImg;
+            });
+            return method;
+        }
+
+        Func<Image<Gray , byte> , Image<Gray , byte>> CreateMethod_AdpThres()
         {
             var method = new Func<Image<Gray,byte>,Image<Gray,byte>>((img)=>
             {
-                //var backInten     = BackgroundInten(img);
-                //var thresImg      = DoThreshold(img , PData.ThresholdV );
+                if (PData.ThresholdV % 2.0 == 0) PData.ThresholdV = PData.ThresholdV + 1;
                 var thresImg  = img.ThresholdAdaptive(new Gray(255), AdaptiveThresholdType.GaussianC , ThresholdType.Binary , PData.ThresholdV ,new Gray(0));
                 return thresImg;//.DilateCross();
             } );
             return method;
         }
 
-        Func<Image<Gray , byte> , Image<Gray , byte>> CreateMethod_1B6R()
-        {
-            var method = new Func<Image<Gray,byte>,Image<Gray,byte>>((img)=>
-            {
-                var thresImg      = DoThreshold(img , (int)BackgroundInten(img) + 5 );
-                return thresImg;
-            } );
-            return method;
-        }
+       
         Func<Image<Gray , byte> , Image<Gray , byte>> CreateMethod_A()
         {
             var method = new Func<Image<Gray,byte>,Image<Gray,byte>>((img)=>

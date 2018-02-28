@@ -235,7 +235,8 @@ namespace WaferandChipProcessing
                 csvExport.Append( delimiter );
                 csvExport.Append( result.OutData[i].ContourSize );
                 csvExport.Append( delimiter );
-                csvExport.Append( result.OutData[i].Intensity / result.OutData[i].ContourSize);
+                //csvExport.Append( result.OutData[i].Intensity / result.OutData[i].ContourSize);
+                csvExport.Append( result.OutData[i].Intensity );
                 csvExport.Append( Environment.NewLine );
             }
             System.IO.File.WriteAllText( path , csvExport.ToString() );

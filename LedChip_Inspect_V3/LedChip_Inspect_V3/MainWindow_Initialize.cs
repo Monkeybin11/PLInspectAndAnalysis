@@ -59,8 +59,8 @@ namespace WaferandChipProcessing
 			ckbGridStyle.IsChecked = true;
 
 			var sampleType2Idx = new Dictionary<string, SampleType>();
-            sampleType2Idx.Add("0. Simple", SampleType.None);
-            sampleType2Idx.Add("1. 1B6RB", SampleType._1B6R);
+            sampleType2Idx.Add("0. Thres", SampleType.Thres);
+            sampleType2Idx.Add("1. AdpThres", SampleType.AdpThres);
             sampleType2Idx.Add("2. A (not suppported)", SampleType._A);
             sampleType2Idx.Add("3. B", SampleType._B);
             sampleType2Idx.Add("4. C", SampleType._C);
@@ -88,7 +88,7 @@ namespace WaferandChipProcessing
 
             core.SampleTypeList = sampleType2Idx;
             cbSampleMethod.ItemsSource = sampleType2Idx.Select((v) => v.Key).ToList();
-			cbSampleMethod.SelectedIndex = 0;
+			cbSampleMethod.SelectedIndex = 1;
 
 			//nudEpiYoffset.Value  = 25000;
             //nudEpiX1Offset.Value = 16666;

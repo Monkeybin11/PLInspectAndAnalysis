@@ -13,7 +13,7 @@ using WaferandChipProcessing.Data;
 
 namespace WaferandChipProcessing
 {
-	public enum SampleType { None, _1B6R, _A, _B, _C, _D, _BlueLD, Fullested, Lumence_0620, Lumence_0620_2mm, AOTCW, AOTTB, Epistar, LumenMapFront, LumenMapBack, LumenLineFront, LumenLineBack, Guang2, Guang2Scatter, Guang2Mapping, Guang2MappingSC, SSDisplay1RGBSample, PlaynittideB1, PlaynittideB2, PlaynittideG1 };
+	public enum SampleType { AdpThres, Thres, _A, _B, _C, _D, _BlueLD, Fullested, Lumence_0620, Lumence_0620_2mm, AOTCW, AOTTB, Epistar, LumenMapFront, LumenMapBack, LumenLineFront, LumenLineBack, Guang2, Guang2Scatter, Guang2Mapping, Guang2MappingSC, SSDisplay1RGBSample, PlaynittideB1, PlaynittideB2, PlaynittideG1 };
 	public enum BoxDrawRole { LoutHout, LinHout, LinHin }; // 나중에 
 
     public enum AdvancedChipPos { None , First , Second , Third }
